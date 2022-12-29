@@ -14,7 +14,7 @@ function App() {
 	useEffect(() => {
 		const getUser = async () => {
 			try {
-				const url = `${REACT_APP_API_URL}/login/success`
+				const url = `${process.env.REACT_APP_API_URL}/login/success`
 				const { data } = await axios.get(url, { withCredentials: true })
 				console.log(data)
 				const { password, ...rest } = data.user
