@@ -16,4 +16,4 @@ export const updateUser = (id, data) => API.put(`/user/${id}`, data)
 
 export const followUser = (id, data) => API.put(`/user/${id}/follow`, data)
 export const unfollowUser = (id, data) =>
-	axios.put(`/user/${id}/unfollow`, data)
+	API.put(`/user/${id}/unfollow`, data)
