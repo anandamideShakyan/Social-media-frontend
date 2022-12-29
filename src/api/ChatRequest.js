@@ -1,5 +1,4 @@
 import axios from "axios"
+const API = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}` })
 
-// const API = axios.create({ baseURL: "http://localhost:5001" })
-
-export const userChats = (id) => axios.get(`/chat/${id}`)
+export const userChats = (id) => API.get(`/chat/${id}`)
