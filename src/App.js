@@ -50,6 +50,12 @@ function App() {
 					path="/profile/:id"
 					element={user ? <Profile /> : <Navigate to="../auth" />}
 				/>
+						
+				<Route
+					path="*"
+					element= <Navigate to="../auth" />
+				/>
+						
 			</Routes>
 		</div>
 	)
