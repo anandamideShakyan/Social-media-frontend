@@ -1,6 +1,6 @@
 import axios from "axios"
 
-// const API = axios.create({ baseURL: "http://localhost:5001" })
+const API = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}` })
 
-export const addMessage = (message) => axios.post(`/message`, message)
-export const getMessages = (id) => axios.get(`/message/${id}`)
+export const addMessage = (message) => API.post(`/message`, message)
+export const getMessages = (id) => API.get(`/message/${id}`)
