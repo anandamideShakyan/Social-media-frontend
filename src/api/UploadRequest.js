@@ -1,7 +1,6 @@
 import axios from "axios"
-// const API = axios.create({ baseURL: "http://localhost:5001" })
-
-axios.interceptors.request.use((req) => {
+const API = axios.create({ baseURL: `${process.env.REACT_APP_API_URL}` })
+API.interceptors.request.use((req) => {
 	if (localStorage.getItem("profile")) {
 		req.headers.Authorization = `Bearer ${
 			JSON.parse(localStorage.getItem("profile")).token
@@ -11,6 +10,6 @@ axios.interceptors.request.use((req) => {
 	return req
 })
 
-export const uploadImage = (data) => axios.post("/upload", data)
+export const uploadImage = (data) => API.post("/upload", data)
 
-export const uploadPost = (data) => axios.post("/post", data)
+export const uploadPost = (data) => API.post("/post", data)
